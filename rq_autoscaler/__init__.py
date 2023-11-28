@@ -1,6 +1,8 @@
 """RQ Autoscaler main module."""
 from __future__ import annotations
 
+from math import ceil
+
 from kr8s.objects import Deployment
 from loguru import logger
 from pydantic import RedisDsn
@@ -44,7 +46,7 @@ class Autoscaler:
     def determine_replica_count(self) -> int:
         """Return the ideal number of replicas."""
         queue_length = self.get_queue_length()
-        replicas = queue_length // self.tasks_per_replica
+        replicas = ceil(queue_length / self.tasks_per_replica)
         if replicas < self.min_replicas:
             replicas = self.min_replicas
         elif replicas > self.max_replicas:
