@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "rq-autoscaler"
+version = "0.0.0"
+description = "Autoscales RQ Workers based on queue size"
+authors = ["Chris Pressland <mail@cpressland.io>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+rq-autoscaler = "rq_autoscaler:cli"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic-settings = "^2.1.0"
+rq = "^1.15.1"
+kr8s = "^0.11.0"
+loguru = "^0.7.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.6"
+black = "^23.11.0"
+mypy = "^1.7.1"
+
+
+[tool.ruff]
+select = ["ALL"]
+ignore = ["ANN101", "D203", "D213", "TCH002"]
+line-length = 120
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+ignore_missing_imports = true
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
