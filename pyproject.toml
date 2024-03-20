@@ -19,7 +19,7 @@ loguru = "^0.7.2"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.6"
-black = "^23.11.0"
+black = "^24.3.0"
 mypy = "^1.7.1"
 
 
