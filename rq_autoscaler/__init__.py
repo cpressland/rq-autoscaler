@@ -24,11 +24,7 @@ def queue_length(redis_url: str, queue: str) -> int:
 def ideal_replica_count(queue_length: int, min_replicas: int, max_replicas: int, tasks_per_replica: int) -> int:
     """Return the ideal number of replicas."""
     replicas = ceil(queue_length / tasks_per_replica)
-    if replicas < min_replicas:
-        replicas = min_replicas
-    elif replicas > max_replicas:
-        replicas = max_replicas
-    return replicas
+    return max(min_replicas, min(replicas, max_replicas))
 
 
 @cli.command()
