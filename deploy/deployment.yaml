@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rq-autoscaler
+  namespace: default
+  labels:
+    app: rq-autoscaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rq-autoscaler
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/default-container: app
+      labels:
+        app: rq-autoscaler
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/cpressland/rq-autoscaler:latest
+          env: []
+          imagePullPolicy: Always
+      serviceAccountName: rq-autoscaler
