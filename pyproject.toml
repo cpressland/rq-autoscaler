@@ -11,21 +11,19 @@ rq-autoscaler = "rq_autoscaler:cli"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-pydantic-settings = "^2.1.0"
-rq = "^1.15.1"
-kr8s = "^0.11.0"
+rq = "^1.16.1"
+kr8s = "^0.14.1"
 loguru = "^0.7.2"
+typer = { extras = ["all"], version = "^0.12.3" }
 
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.1.6"
-black = "^24.3.0"
-mypy = "^1.7.1"
-
+ruff = "^0.3.7"
+mypy = "^1.9.0"
 
 [tool.ruff]
 select = ["ALL"]
-ignore = ["ANN101", "D203", "D213", "TCH002"]
+ignore = ["ANN101", "D203", "D213", "TCH002", "PLR0913"]
 line-length = 120
 
 [tool.black]

@@ -14,6 +14,7 @@ The following settings are currently available:
 | MIN_REPLICAS | The minimum number of replicas you want to allow, example: `1` |
 | MAX_REPLICAS | The maximum number of replicas you want to allow, example: `100` |
 | TASKS_PER_REPLICA | The split of tasks to replicas, uses `queue_length / tasks_per_replica`, example: `10000` |
+| INTERVAL | How often to check queue size and perform scaling operations, example `10` |
 
 ## Usage
 
@@ -27,15 +28,15 @@ resources:
 namespace: your-namespace
 patches:
   - target:
-      kind: CronJob
+      kind: Deployment
     patch: |
       - op: replace
-        path: /spec/jobTemplate/spec/template/spec/containers/0/env
+        path: /spec/template/spec/containers/0/env
         value:
           - name: REDIS_URL
             value: redis://my-redis-server:6379/0
           - name: DEPLOYMENT
-            value: my-namespace/my-deployment
+            value: my-deployment
           - name: QUEUE
             value: my-queue
           - name: MIN_REPLICAS
@@ -44,4 +45,6 @@ patches:
             value: "10"
           - name: TASKS_PER_REPLICA
             value: "10000"
+          - name: INTERVAL
+            value: "10"
 ```
