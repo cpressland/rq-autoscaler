@@ -12,7 +12,7 @@ rq-autoscaler = "rq_autoscaler:cli"
 [tool.poetry.dependencies]
 python = "^3.11"
 rq = "^1.16.1"
-kr8s = "^0.14.1"
+kr8s = "^0.15.0"
 loguru = "^0.7.2"
 typer = { extras = ["all"], version = "^0.12.3" }
 
