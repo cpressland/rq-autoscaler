@@ -310,13 +310,13 @@ files = [
 
 [[package]]
 name = "kr8s"
-version = "0.16.1"
+version = "0.17.0"
 description = "A Kubernetes API library"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "kr8s-0.16.1-py3-none-any.whl", hash = "sha256:89f81798bbff63dbd651d8c866c7a9071509369ad5b5bd1bc24522b8d6ba80f6"},
-    {file = "kr8s-0.16.1.tar.gz", hash = "sha256:2a86a2117fcb788a35e33ba0177d92b96b183bff678dba9b472f58bfdace2350"},
+    {file = "kr8s-0.17.0-py3-none-any.whl", hash = "sha256:7307bca7b125cdc8c41ec9d7a0b3b1273c4c76b10b992a054aaf1e38309f1445"},
+    {file = "kr8s-0.17.0.tar.gz", hash = "sha256:c2afe40461f1b1c853dcde755a64fe4837e05b931c6effbfff12ab32ae224445"},
 ]
 
 [package.dependencies]
@@ -332,7 +332,7 @@ pyyaml = ">=6.0"
 
 [package.extras]
 docs = ["furo (>=2023.3.27)", "myst-parser (>=1.0.0)", "sphinx (>=5.3.0)", "sphinx-autoapi (>=2.1.0)", "sphinx-autobuild (>=2021.3.14)", "sphinx-copybutton (>=0.5.1)", "sphinx-design (>=0.3.0)", "sphinxcontrib-mermaid (>=0.8.1)"]
-test = ["kubernetes (>=26.1.0)", "kubernetes-asyncio (>=24.2.3)", "kubernetes-validate (>=1.28.0)", "lightkube (>=0.13.0)", "pykube-ng (>=23.6.0)", "pytest (>=7.2.2)", "pytest-asyncio (>=0.20.3)", "pytest-cov (>=4.0.0)", "pytest-kind (>=22.11.1)", "pytest-rerunfailures (>=11.1.2)", "pytest-timeout (>=2.1.0)", "trio (>=0.22.0)"]
+test = ["kubernetes (>=26.1.0)", "kubernetes-asyncio (>=24.2.3)", "kubernetes-validate (>=1.28.0)", "lightkube (>=0.13.0)", "pykube-ng (>=23.6.0)", "pytest (>=7.2.2)", "pytest-asyncio (>=0.20.3)", "pytest-cov (>=4.0.0)", "pytest-kind (>=22.11.1)", "pytest-rerunfailures (>=11.1.2)", "pytest-timeout (>=2.1.0)", "trio (>=0.22.0)", "types-pyyaml (>=6.0)"]
 
 [[package]]
 name = "loguru"
@@ -732,4 +732,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c01ff6eb474770937a8cc98dade753a9b72e31a828b878a3fb3b90dc09c25f41"
+content-hash = "077d93f72214977cfdfe18e47c3d50c627b443fb3917c4176f99023bc378103b"
